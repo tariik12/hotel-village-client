@@ -1,14 +1,44 @@
+import { TypeAnimation } from 'react-type-animation';
 import banner from '../../../../public/banner.mp4'
+import { useState } from 'react';
 
 const Banner = () => {
+    const [textColor, setTextColor] = useState('yellow');
     return (
         <div>
            <video src={banner} autoPlay muted loop width='100%'/>
 
-           <div className='relative group mx-auto'>
-            <p className='absolute inset-0 flex justify-center -mt-72 text-4xl text-white'>Welcome To  HOTEL <span className="text-orange-600 capitalize">VILLAGE</span></p>
-           
-           </div>
+    
+     <div
+      style={{
+        fontSize: '60px',
+        color: textColor,
+      }}
+      className='text-center -mt-72 '>
+      <TypeAnimation
+        sequence={[
+          'WELCOME',
+          800,
+          () => setTextColor('darksalmon'),
+          'WELCOME TO ',
+          800,
+          () => setTextColor('brown'),
+          'WELCOME TO HO',
+          800,
+          () => setTextColor('purple'),
+          'WELCOME TO HOTEL',
+          800,
+          () => setTextColor('darkviolet'),
+          'WELCOME TO HOTEL VILLAGE',
+          1000,
+          () => setTextColor('firebrick'),
+          '',
+        ]}
+        repeat={Infinity}
+      />
+    </div>
+   
+
         </div>
     );
 };

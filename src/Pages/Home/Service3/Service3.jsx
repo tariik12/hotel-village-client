@@ -26,11 +26,11 @@ const Service3 = () => {
     return (
         <div className="flex justify-evenly gap-4 mt-24">
             {
-                service3.map(({index,name,image,text}) =><div className="w-[300px] hover:w-[305px] hover:shadow-xl p-2 rounded-xl" key={index}>
+                service3.map(({index,name,image,text}) =><div className="w-[300px] hover:w-[305px] border hover:border-orange-600 hover:shadow-xl p-2 hover:p-1 hover:rounded-2xl" key={index}>
                     <Link className="" to='/'>
-                    <img src={image} title={`Show ${name} Gallery`} alt={`${name}'Gallery'`} className=" w-full h-[200px] hover:h-[195px] overflow-hidden hover:shadow-2xl"/></Link>
+                    <img src={image} title={`Show ${name} Gallery`} alt={`${name}'Gallery'`} className=" w-full h-[200px] hover:h-[195px] overflow-hidden hover:shadow-2xl hover:rounded-lg"/></Link>
                     <h3 className="text-center text-2xl">{name}</h3>
-                    <p className="text-center">{text.slice(0,74)}... <Link to='/' className="text-orange-100 hover:text-orange-600">Read More</Link></p>
+                    <p className="text-center">{text.slice(0,74)}... <Link to='/' className="text-orange-600 hover:text-orange-800">Read More</Link></p>
                 </div>)
             }
         </div>

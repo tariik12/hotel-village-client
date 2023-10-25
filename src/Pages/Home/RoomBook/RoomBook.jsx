@@ -59,7 +59,7 @@ const RoomBook = () => {
         <div className="">
              <Slider {...settings}>
              {
-                roomBooks.slice(0,4).map(({ Category, image,description}) =><div className=" mt-11  border rounded-xl hover:border-orange-800 shadow-lg p-2 hover:shadow-2xl" key={image}>
+                roomBooks.slice(0,4).map(({ Category, image,description}) =><div className="mt-11  border rounded-xl hover:border-orange-800 shadow-lg p-2 hover:shadow-2xl" key={image}>
                     
                     <img src={image} className="h-[300px] p-4" alt="" />
                     <h3 className="text-center">{Category}</h3>

@@ -7,15 +7,15 @@ const nabLinks = (
       <Link style={{
                 
               }}
-             whileHover={{  scale: 1.1 }} className='hover:text-orange-600 border-b-0 hover:border-b-2 hover:font-bold' href='/'>Home</Link>
+             whileHover={{  scale: 1.1 }} className='hover:text-orange-600 border-b-0 hover:border-b-2 hover:text-lg border-white hover:font-bold' href='/'>Home</Link>
       <Link style={{
                 
               }}
-             whileHover={{  scale: 1.1 }} className='hover:text-orange-600 border-b-0 hover:border-b-2 hover:font-bold' href='/'>Room</Link>
+             whileHover={{  scale: 1.1 }} className='hover:text-orange-600 border-b-0 hover:border-b-2 hover:text-lg border-white hover:font-bold' href='/'>Room</Link>
       <Link style={{
                 
               }}
-             whileHover={{  scale: 1.1 }} className='hover:text-orange-600 border-b-0 hover:border-b-2 hover:font-bold' href='/'>Featurce</Link>
+             whileHover={{  scale: 1.1 }} className='hover:text-orange-600 border-b-0 hover:border-b-2 hover:text-lg border-white hover:font-bold' href='/'>Featurce</Link>
    
 
     
@@ -58,7 +58,7 @@ const Navbar = () => {
     <motion.h3 style={{
                 
                 }}
-               whileHover={{  scale: 1.1 }}  className="md:text-2xl text-white   font-mono border-b-0 hover:border-b-2 md:ms-10 ">
+               whileHover={{  scale: 1.1 }}  className="md:text-2xl text-white border-white    font-mono border-b-0 hover:border-b-2 md:ms-10 ">
           Hotel <span className="text-orange-600 capitalize">VILLAGE</span>
         </motion.h3>
   </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
   <motion.h3 style={{
                 
               }}
-             whileHover={{  scale: 1.1 }}  className="md:text-2xl text-white  font-mono border-b-0 hover:border-b-2 md:me-10 ">
+             whileHover={{  scale: 1.1 }}  className="md:text-2xl text-white  border-white  font-mono border-b-0 hover:border-b-2 md:me-10 ">
        Hotline :<span className="text-orange-600 capitalize">+880179542</span>
       </motion.h3>
   </div>

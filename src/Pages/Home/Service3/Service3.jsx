@@ -24,9 +24,9 @@ const service3 =[
 
 const Service3 = () => {
     return (
-        <div className="flex justify-evenly gap-4 mt-24">
+        <div className="md:flex md:justify-evenly md:gap-4 md:-mt-24">
             {
-                service3.map(({index,name,image,text}) =><div className="w-[300px] hover:w-[305px] border hover:border-orange-600 hover:shadow-xl p-2 hover:p-1 hover:rounded-2xl" key={index}>
+                service3.map(({index,name,image,text}) =><div className="md:w-[300px] hover:w-[305px] border hover:border-orange-600 hover:shadow-xl p-2 hover:p-1 hover:rounded-2xl mx-auto" key={index}>
                     <Link className="" to='/'>
                     <img src={image} title={`Show ${name} Gallery`} alt={`${name}'Gallery'`} className=" w-full h-[200px] hover:h-[195px] overflow-hidden hover:shadow-2xl hover:rounded-lg"/></Link>
                     <h3 className="text-center text-2xl">{name}</h3>

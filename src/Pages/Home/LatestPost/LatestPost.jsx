@@ -59,14 +59,14 @@ const roomBooks =[
 const LatestPost = () => {
 
    return (
-    <div className="flex mt-10">
+    <div className="md:flex justify-around mt-10">
        <div>
        {
          roomBooks.map(({ image, Category, description, shorting }) => 
-            <div className={`flex w-full ${shorting % 2 === 1 ? 'flex-row-reverse' : ''}`} key={image}>
-                <img className="w-[300px] h-[300px]" src={image} alt="" />
+            <div className={`md:flex w-full justify-between mt-3 ${shorting % 2 === 1 ? 'md:flex-row-reverse' : ''}`} key={image}>
+                <img className="md:w-[300px] h-[300px]" src={image} alt="" />
                 <p>{Category}</p>
-                <p className="w-[900px]">{description}</p>
+                <p className="">{description}</p>
             </div>
          )}
        </div>

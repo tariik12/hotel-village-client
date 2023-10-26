@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <div  className="flex justify-evenly mt-10">
+        <div  className="md:flex justify-evenly mt-10">
           <div>
             <h1 className="font-bold">QUICK LINKS</h1>
 <p>Best Online Rate Guarantee</p>

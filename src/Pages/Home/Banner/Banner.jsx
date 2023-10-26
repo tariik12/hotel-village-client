@@ -1,4 +1,4 @@
-import { TypeAnimation } from 'react-type-animation';
+// import { TypeAnimation } from 'react-type-animation';
 import banner from '../../../../public/banner1.mp4'
 import { useState } from 'react';
 
@@ -6,10 +6,10 @@ const Banner = () => {
     const [textColor, setTextColor] = useState('yellow');
     return (
         <div>
-           <video src={banner} autoPlay muted loop width='100%' />
+           <video src={banner} autoPlay muted loop width='100%' className='w-300px' />
 
     
-     <div
+     {/* <div
       style={{
         fontSize: '60px',
         color: textColor,
@@ -36,7 +36,7 @@ const Banner = () => {
         ]}
         repeat={Infinity}
       />
-    </div>
+    </div> */}
    
 
         </div>

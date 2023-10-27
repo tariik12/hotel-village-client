@@ -21,12 +21,18 @@ const service3 =[
     },
 
 ]
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from "react";
 const Service3 = () => {
+
+        useEffect(() => {
+            AOS.init();
+          }, [])
     return (
         <div className="md:flex md:justify-evenly md:gap-4 md:-mt-24">
             {
-                service3.map(({index,name,image,text}) =><div className="md:w-[300px] hover:w-[305px] border hover:border-orange-600 hover:shadow-xl p-2 hover:p-1 hover:rounded-2xl mx-auto" key={index}>
+                service3.map(({index,name,image,text}) =><div data-aos="zoom-in-down" className="md:w-[300px] hover:w-[305px] border hover:border-orange-600 hover:shadow-xl p-2 hover:p-1 hover:rounded-2xl mx-auto" key={index}>
                     <Link className="" to='/'>
                     <img src={image} title={`Show ${name} Gallery`} alt={`${name}'Gallery'`} className=" w-full h-[200px] hover:h-[195px] overflow-hidden hover:shadow-2xl hover:rounded-lg"/></Link>
                     <h3 className="text-center text-2xl">{name}</h3>

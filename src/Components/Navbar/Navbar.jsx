@@ -4,23 +4,21 @@ import { motion } from "framer-motion"
 const nabLinks = (
   <>
     
-      <Link style={{
+      <Link  href='/'>
+             <span style={{
                 
               }}
-             whileHover={{  scale: 1.1 }} className='hover:text-orange-600 border-b-0 hover:border-b-2 hover:text-lg border-white hover:font-bold' href='/'>Home</Link>
-      <Link style={{
+             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Home</span></Link>
+      <Link  href='/'>
+             <span style={{
                 
               }}
-             whileHover={{  scale: 1.1 }} className='hover:text-orange-600 border-b-0 hover:border-b-2 hover:text-lg border-white hover:font-bold' href='/'>Room</Link>
-      <Link style={{
+             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Feature</span></Link>
+      <Link  href='/'>
+             <span style={{
                 
               }}
-             whileHover={{  scale: 1.1 }} className='hover:text-orange-600 border-b-0 hover:border-b-2 hover:text-lg border-white hover:font-bold' href='/'>Featurce</Link>
-   
-
-    
-    
-  
+             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Room</span></Link>
   </>
 );
 
@@ -58,8 +56,8 @@ const Navbar = () => {
     <motion.h3 style={{
                 
                 }}
-               whileHover={{  scale: 1.1 }}  className="md:text-2xl text-white border-white    font-mono border-b-0 hover:border-b-2 md:ms-10 ">
-          Hotel <span className="text-orange-600 capitalize">VILLAGE</span>
+               whileHover={{  scale: 1.1 }}  className="md:text-2xl text-white border-white    font-mono border-b-0 hover:border-b-2 md:ms-10 hover:text-orange-600 ">
+          HOTEL <span className="text-orange-600 hover:text-white capitalize">VILLAGE</span>
         </motion.h3>
   </div>
   <div className="navbar-center hidden lg:flex  ">

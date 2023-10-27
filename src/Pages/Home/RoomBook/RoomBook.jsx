@@ -46,8 +46,14 @@ import Slider from "react-slick";
         Category:'Deluxe Room',
         image:'https://media.radissonhotels.net/image/radisson-blu-hotel-dhaka-water-garden/suite/16256-113891-f63612856_4k.jpg?impolicy=GalleryLightboxFullscreen'
     },
-]
+];
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from "react";
 const RoomBook = () => {
+        useEffect(() => {
+            AOS.init();
+          }, [])
     const settings = {
        autoplay:true,
         infinite: true,
@@ -81,13 +87,14 @@ const RoomBook = () => {
         }
       ]
       };
+
     return (
-        <div className="">
+        <div  className="mt-11">
              <Slider {...settings}>
              {
-                roomBooks.slice(0,4).map(({ Category, image,description}) =><div className="mt-11  border rounded-xl hover:border-orange-800 shadow-lg p-2 hover:shadow-2xl" key={image}>
+                roomBooks.slice(0,4).map(({index, Category, image,description}) =><div data-aos="zoom-in-down" className="  border wid mx-auto rounded-xl hover:border-orange-800 shadow-lg p-2 hover:shadow-2xl" key={index}>
                     
-                    <img src={image} className="h-[300px] p-4" alt="" />
+                    <img src={image} className="h-[300px]   p-4" alt="" />
                     <h3 className="text-center">{Category}</h3>
                     <p>{description}</p>
                    

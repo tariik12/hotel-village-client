@@ -35,3 +35,21 @@ slick-next.hover::after {
    width: 50px !important;  
    
 }
+
+.progress-bar {
+   
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    background: red;
+    transform-origin: 0%;
+  }
+
+  .wid {
+    width: 350px !important;
+   
+    margin-right: auto  !important;
+
+  }
+  

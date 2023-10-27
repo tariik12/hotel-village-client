@@ -54,16 +54,20 @@ const roomBooks =[
         image:'https://media.radissonhotels.net/image/radisson-blu-hotel-dhaka-water-garden/suite/16256-113891-f63612856_4k.jpg?impolicy=GalleryLightboxFullscreen'
     },
 ]
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from 'react';
 
 const LatestPost = () => {
-
+    useEffect(() => {
+        AOS.init();
+      }, [])
    return (
-    <div className="md:flex justify-around mt-10">
+    <div className="md:flex justify-around mt-10" >
        <div>
        {
          roomBooks.map(({ image, Category, description, shorting }) => 
-            <div className={`md:flex w-full justify-between mt-3 ${shorting % 2 === 1 ? 'md:flex-row-reverse' : ''}`} key={image}>
+            <div  data-aos={shorting % 2 === 1 ? 'fade-left' : 'fade-right'} className={`md:flex w-full justify-between mt-3 ${shorting % 2 === 1 ? 'md:flex-row-reverse' : ''}`} key={image}>
                 <img className="md:w-[300px] h-[300px]" src={image} alt="" />
                 <p>{Category}</p>
                 <p className="">{description}</p>

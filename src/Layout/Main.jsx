@@ -9,7 +9,7 @@ const Main = () => {
     const { scrollYProgress } = useScroll();
     return (
         <>
-        <motion.div  >
+        <motion.div  className="overflow-hidden" >
             <Navbar></Navbar>
  <Outlet></Outlet>
             <Footer></Footer>

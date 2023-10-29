@@ -1,5 +1,5 @@
 // import { TypeAnimation } from 'react-type-animation';
-import banner from '../../../../public/banner1.mp4'
+import banner from '/banner1.mp4'
 import { useState } from 'react';
 import { motion } from "framer-motion"
 import AOS from 'aos';

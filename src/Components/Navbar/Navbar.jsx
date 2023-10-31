@@ -43,7 +43,7 @@ const Navbar = () => {
 
   const user = true;
   return (
-   <div className='fixed z-10 md:w-full w-[390px] top-0' >
+   <div className='fixed z-10 w-full top-0' >
 <div className={`navbar ${
       scrolling ? 'bg-black text-orange-400 font-bold' : 'bg-[#2b252529] text-white'
     }`}>
@@ -52,16 +52,18 @@ const Navbar = () => {
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3  p-2 shadow  rounded-box w-52 text-black bg-orange-6 00">
+      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3  p-2 shadow  rounded-box  text-black bg-orange-6 00">
       {nabLinks}
       </ul>
     </div>
-    <motion.h3 style={{
+    <Link className=' ' to='/'>
+    <motion.span style={{
                 
-                }}
-               whileHover={{  scale: 1.1 }}  className="md:text-2xl text-white border-white    font-mono border-b-0 hover:border-b-2 md:ms-10 hover:text-orange-600 ">
-          HOTEL <span className="text-orange-600 hover:text-white capitalize">VILLAGE</span>
-        </motion.h3>
+              }}
+             whileHover={{  scale: 1.1 }}  className="md:text-3xl text-white border-white    font-mono border-b-0 hover:border-b-2 md:ms-10 hover:text-orange-600 w-full ">
+        Vibrant Vineyard <span className="text-orange-600 hover:text-white capitalize">Villas</span>
+      </motion.span>
+    </Link>
   </div>
   <div className="navbar-center hidden lg:flex  ">
     <ul className="menu menu-horizontal px-1 gap-4">
@@ -69,8 +71,8 @@ const Navbar = () => {
    
     </ul>
   </div>
-  <div className="navbar-end me-6">
-  <div className="dropdown dropdown-end">
+  <div className="navbar-end me-6 ">
+  <div className="dropdown dropdown-end p-1 bg-orange-600 rounded-full">
                 {user ? (
                   <>
                     <label
@@ -88,7 +90,7 @@ const Navbar = () => {
                       tabIndex={0}
                       className="btn btn-ghost btn-circle avatar"
                     >
-                      <div className="w-10 rounded-full z-20">
+                      <div className="w-10 rounded-full border-white border-2 z-20">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbm4AFxi4zALrc_0Rv-m0yH2o0TrL3yuG09tTBAno&s" />
                       </div>
                     </label>

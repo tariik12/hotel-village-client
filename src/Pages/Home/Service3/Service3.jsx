@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 const service3 =[
     {
@@ -23,22 +22,20 @@ const service3 =[
 ]
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
-import { useEffect } from "react";
+import { useEffect} from "react";
+import ShowServicesModal from "../../../Components/Service3Modal/ShowServicesModal";
+
 const Service3 = () => {
 
-        useEffect(() => {
-            AOS.init();
-          }, [])
+useEffect(() => {
+    AOS.init();
+},[] );
+
     return (
-        <div className="md:flex md:justify-evenly md:gap-4 md:-mt-24">
-            {
-                service3.map(({index,name,image,text}) =><div data-aos="zoom-in-down" className="md:w-[300px] hover:w-[305px] border hover:border-orange-600 hover:shadow-xl p-2 hover:p-1 hover:rounded-2xl mx-auto" key={index}>
-                    <Link className="" to='/'>
-                    <img src={image} title={`Show ${name} Gallery`} alt={`${name}'Gallery'`} className=" w-full h-[200px] hover:h-[195px] overflow-hidden hover:shadow-2xl hover:rounded-lg"/></Link>
-                    <h3 className="text-center text-2xl">{name}</h3>
-                    <p className="text-center">{text.slice(0,74)}... <Link to='/' className="text-orange-600 hover:text-orange-800">Read More</Link></p>
-                </div>)
-            }
+        <div className="">
+            <ShowServicesModal service3={service3}></ShowServicesModal>
+            
+            
         </div>
     );
 };

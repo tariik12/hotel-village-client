@@ -2,8 +2,10 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, } from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
 
-export default function Modal({isOpen, closeModal, children}) {
+// const cl =['orange','yellow','blue']
 
+export default function Modal({isOpen, closeModal, children, title, borderColorIndex}) {
+  // const borderColor = cl[borderColorIndex % cl.length]; 
 
   return (
     <>
@@ -34,7 +36,7 @@ export default function Modal({isOpen, closeModal, children}) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel  className={`w-full max-w-4xl p-4 h-[500px] transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all border-orange-600 border-4`}>
                 <div className=" ">
                     <div  className=" flex justify-end">
                     <button
@@ -47,9 +49,9 @@ export default function Modal({isOpen, closeModal, children}) {
                     </div>
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-3xl text-center border-orange-600  border-b-4 pb-2 font-thin leading-6 text-gray-900"
                   >
-                    Payment successful
+                   {title}
                   </Dialog.Title>
                   {children}
 

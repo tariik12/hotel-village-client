@@ -8,7 +8,15 @@ export const hotelVillageApi = createApi({
    getLatestProducts:builder.query({
     query:() =>'/allProducts'
    }),
+   getServices3:builder.query({
+    query:() =>'/services3'
+   }),
+   getHotelServicesData:builder.query({
+    query:() =>'/hotelServicesData'
+   }),
   }),
+ 
+
 })
 
-export const {useGetLatestProductsQuery} = hotelVillageApi
+export const {useGetLatestProductsQuery, useGetServices3Query, useGetHotelServicesDataQuery} = hotelVillageApi

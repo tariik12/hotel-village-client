@@ -54,7 +54,7 @@ const PhotoSlider = ({data}) => {
         <div  className="mt-11">
              <Slider {...settings}>
              {
-                data?.map(({ image,shorting, Category }) =><div  className=" rounded-xl    w-full  p-2 " key={shorting}>
+                data?.map(({ image,_id, Category }) =><div  className=" rounded-xl    w-full  p-2 " key={_id}>
                      <h2>{Category}</h2>
                     
                     <img src={image} className="h-[300px] rounded-md w-full " alt="" />

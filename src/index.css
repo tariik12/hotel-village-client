@@ -65,4 +65,12 @@ slick-next.hover::after {
    
 
   } */
+
+  .automated{
+    -webkit-clip-path: polygon(39% 27%, 66% 30%, 100% 0, 100% 90%, 79% 92%, 55% 79%, 33% 77%, 0 100%, 0 14%, 20% 11%);
+clip-path: polygon(55% 40%, 75% 46%, 91% 57%, 100% 75%, 100% 100%, 0 100%, 0 76%, 6% 64%, 15% 51%, 31% 43%);
+height: 700px;
+
+background: #F8FAFC;
+}
   

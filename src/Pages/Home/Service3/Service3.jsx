@@ -13,7 +13,7 @@ useEffect(() => {
 },[] );
 
     return (
-        <div className="">
+        <div className="bg-gradient-to-t from-[#f1f1f3ef] via-[#228eac3d] to-[#f7f4f483] py-10 ">
             <ShowServicesModal service3={service3}></ShowServicesModal>
             
             

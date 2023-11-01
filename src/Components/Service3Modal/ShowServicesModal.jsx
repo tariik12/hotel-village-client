@@ -34,11 +34,11 @@ const ShowServicesModal = ({service3}) => {
        <div className="md:flex md:justify-evenly md:gap-4 md:-mt-24">
        
        {
-               service3?.map(({index,name,image,text}) =><div data-aos="zoom-in-down" className="md:w-[300px] hover:w-[305px] border hover:border-orange-600 hover:shadow-xl p-2 hover:p-1 hover:rounded-2xl mx-auto" key={index}>
+               service3?.map(({_id,name,image,text}) =><div data-aos="zoom-in-down" className="md:w-[300px] border-2 hover:border-orange-600 hover:shadow-xl p-2  rounded-2xl mx-auto" key={_id}>
                    <Link className="" to='/'>
-                   <img onClick={()=>openModal(name)} src={image} title={`Show ${name} Gallery`} alt={`${name}'Gallery'`} className=" w-full h-[200px] hover:h-[205px] overflow-hidden hover:shadow-2xl hover:rounded-lg"/></Link>
+                   <img onClick={()=>openModal(name)} src={image} title={`Show ${name} Gallery`} alt={`${name}'Gallery'`} className=" w-full h-[200px] overflow-hidden hover:shadow-2xl hover:rounded-lg"/></Link>
                    
-                   <h3 className="text-center text-2xl">{name}</h3>
+                   <h3 className="text-center text-2xl text-orange-600">{name}</h3>
                   <p >{text.slice(0, 74)} .</p>
                </div>)
            }

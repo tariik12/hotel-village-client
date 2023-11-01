@@ -50,6 +50,8 @@ import Slider from "react-slick";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from "react";
+import { useGetHotelServicesDataQuery } from "../../../redux/api/hotelVillageApi";
+import { Link } from "react-router-dom";
 const RoomBook = () => {
         useEffect(() => {
             AOS.init();
@@ -87,18 +89,21 @@ const RoomBook = () => {
         }
       ]
       };
-
+const {data:hotelServicesData} = useGetHotelServicesDataQuery()
+const ourRooms = hotelServicesData?.filter(({category}) => category ==='Our Room')
     return (
         <div  className="mt-11">
              <Slider {...settings}>
              {
-                roomBooks.slice(0,4).map(({index, Category, image,description}) =><div data-aos="zoom-in-down" className="  border wid mx-auto rounded-xl hover:border-orange-800 shadow-lg p-2 hover:shadow-2xl ms-4 md:ms-10 containWid" key={index}>
+                ourRooms?.map(({_id, name, image,description}) =>
+                    <div data-aos="zoom-in-down" className="md:w-[300px] border-2 hover:border-orange-600 hover:shadow-xl   rounded-2xl containWid p-2" key={_id}>
+                   <Link className="" to='/'>
+                   <img onClick={()=>openModal(name)} src={image} title={`Show ${name} Gallery`} alt={`${name}'Gallery'`} className=" w-full h-[200px] overflow-hidden hover:shadow-2xl hover:rounded-lg"/></Link>
                    
-                    <img src={image} className="h-[300px]  " alt="" />
-                    <h3 className="text-center">{Category}</h3>
-                    <p>{description}</p>
-                   
-                </div>)
+                   <h3 className="text-center text-2xl text-orange-600">{name}</h3>
+                  <p >{description}</p>
+               </div>
+               )
             }
           </Slider>
             

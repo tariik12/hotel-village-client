@@ -36,7 +36,7 @@ export default function Modal({isOpen, closeModal, children, title, borderColorI
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel  className={`w-full max-w-4xl p-4 h-[500px] transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all border-orange-600 border-4`}>
+                <Dialog.Panel  className={`w-full max-w-4xl p-4 h-[500px] transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all border-orange-400 hover:border-orange-700 border-4`}>
                 <div className=" ">
                     <div  className=" flex justify-end">
                     <button
@@ -44,7 +44,7 @@ export default function Modal({isOpen, closeModal, children, title, borderColorI
                      
                       onClick={closeModal}
                     >
-                      <AiOutlineClose/>
+                      <AiOutlineClose className='hover:text-red-600 hover:bg-orange-400 text-2xl text-red-100 p-1 bg-orange-700 rounded-full'/>
                     </button>
                     </div>
                   <Dialog.Title

@@ -6,6 +6,7 @@ import { GrMapLocation } from 'react-icons/gr';
 import { Rating,ThinStar } from '@smastrom/react-rating'
 import { FaWifi } from 'react-icons/fa';
 import {GiForkKnifeSpoon, GiBarbedNails } from 'react-icons/gi';
+import { Link } from "react-router-dom";
 const myStyles = {
   itemShapes: ThinStar,
   activeFillColor: '#FF4433',
@@ -71,13 +72,15 @@ const PhotoSlider = ({data, title}) => {
         <div  className="mt-11 ">
              <Slider {...settings}>
              {
-               showSlider?.map(({ image,_id, Category,name,description,rating }) =><div  className=" rounded-xl    w-full  p-2 " key={_id}>
+               showSlider?.map(({ image,_id, Category,description,rating }) =><div  className=" rounded-xl    w-full  p-2 " key={_id}>
                      <h2>{Category}</h2>
-                    
+                  {
+                    title &&  <Link to='/viewMoreDetails' className=" hover:text-orange-700 "> View More Details</Link>
+                  }
                     <img src={image} className="h-[300px] rounded-md w-full " alt="" />
                    
             {title && <div className="">
-              
+             
                   <p >{description}</p>
                   <p className=" font-thin flex justify-start items-center gap-3 my-2"><GrMapLocation className=" text-orange-900 "/>Air Port Dhaka, Bangladesh</p>
                   <div className="flex justify-start gap-6 items-center ">

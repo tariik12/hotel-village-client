@@ -7,6 +7,7 @@ import Error from "../Components/Error/Error";
 import Home from "../Pages/Home/Home/Home";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import ViewMoreDetails from "../Components/ViewMoreDetails/ViewMoreDetails";
 
 export const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
         {
           path:"/",
           element:<Home></Home>
+        },
+        {
+          path:"/viewMoreDetails",
+          element:<ViewMoreDetails></ViewMoreDetails>
         }
       ]
     },

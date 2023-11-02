@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 // const cl =['orange','yellow','blue']
 
-export default function Modal({isOpen, closeModal, children, title, borderColorIndex}) {
+export default function Modal({isOpen, closeModal, children, title}) {
   // const borderColor = cl[borderColorIndex % cl.length]; 
 
   return (
@@ -12,7 +12,7 @@ export default function Modal({isOpen, closeModal, children, title, borderColorI
      
 
       <Transition appear show={isOpen} as={Fragment} className=' '>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-10 " onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -36,7 +36,7 @@ export default function Modal({isOpen, closeModal, children, title, borderColorI
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel  className={`w-full max-w-4xl p-4 h-[500px] transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all border-orange-400 hover:border-orange-700 border-4`}>
+                <Dialog.Panel  className={`w-full max-w-4xl p-4 h-[500px] transform overflow-y-auto bg-white text-left align-middle shadow-xl transition-all `}>
                 <div className=" ">
                     <div  className=" flex justify-end">
                     <button
@@ -49,7 +49,7 @@ export default function Modal({isOpen, closeModal, children, title, borderColorI
                     </div>
                   <Dialog.Title
                     as="h3"
-                    className="text-3xl text-center border-orange-600  border-b-4 pb-2 font-thin leading-6 text-gray-900"
+                    className="text-3xl text-center  font-thin leading-6 text-orange-600"
                   >
                    {title}
                   </Dialog.Title>

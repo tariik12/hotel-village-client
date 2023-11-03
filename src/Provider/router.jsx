@@ -8,6 +8,8 @@ import Home from "../Pages/Home/Home/Home";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import ViewMoreDetails from "../Components/ViewMoreDetails/ViewMoreDetails";
+import AllFood from "../Pages/AllFood/AllFood";
+import AllRoom from "../Pages/AllRoom/AllRoom";
 
 export const router = createBrowserRouter([
     {
@@ -20,9 +22,14 @@ export const router = createBrowserRouter([
           element:<Home></Home>
         },
         {
-          path:"/viewMoreDetails",
-          element:<ViewMoreDetails></ViewMoreDetails>
-        }
+          path:'/allFoods',
+          element:<AllFood></AllFood>
+        },
+        {
+          path:'/allRooms',
+          element:<AllRoom></AllRoom>
+        },
+        
       ]
     },
     {
@@ -36,4 +43,8 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:"/viewMoreDetails",
+      element:<ViewMoreDetails></ViewMoreDetails>
+    }
   ]);

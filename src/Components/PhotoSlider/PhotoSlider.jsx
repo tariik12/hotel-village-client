@@ -74,9 +74,19 @@ const PhotoSlider = ({data, title}) => {
              {
                showSlider?.map(({ image,_id, Category,description,rating }) =><div  className=" rounded-xl    w-full  p-2 " key={_id}>
                      <h2>{Category}</h2>
-                  {
-                    title &&  <Link to='/viewMoreDetails' className=" hover:text-orange-700 "> View More Details</Link>
-                  }
+                     {
+  title && (
+    <Link
+      to={{
+        pathname: "/viewMoreDetails",
+        state: { data: { image, _id,  description, rating } },
+      }}
+      className="hover:text-orange-700"
+    >
+      View More Details
+    </Link>
+  )
+} 
                     <img src={image} className="h-[300px] rounded-md w-full " alt="" />
                    
             {title && <div className="">

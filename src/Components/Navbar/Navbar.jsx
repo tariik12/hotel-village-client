@@ -5,21 +5,26 @@ const nabLinks = (
 
   <>
     
-      <Link  href='/'>
+      <Link  to='/'>
              <span style={{
                 
               }}
              whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Home</span></Link>
-      <Link  href='/'>
+      <Link  to='/allFoods'>
              <span style={{
                 
               }}
-             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Feature</span></Link>
-      <Link  href='/'>
+             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Food</span></Link>
+      <Link  to='/allRooms'>
              <span style={{
                 
               }}
              whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Room</span></Link>
+      <Link  to='/'>
+             <span style={{
+                
+              }}
+             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Shop</span></Link>
   </>
 );
 
@@ -43,7 +48,7 @@ const Navbar = () => {
 
   const user = true;
   return (
-   <div className='fixed z-10 w-full top-0' >
+   <div className='fixed z-50 w-full top-0' >
 <div className={`navbar ${
       scrolling ? 'bg-black text-orange-400 font-bold' : 'bg-[#2b252529] text-white'
     }`}>

@@ -1,4 +1,3 @@
-import ReactPagination from "../../../Components/ReactPagination";
 import Banner from "../Banner/Banner";
 import CheckAvailability from "../CheckAvility/CheckAvailability";
 import LatestPost from "../LatestPost/LatestPost";
@@ -20,7 +19,6 @@ const Home = () => {
             <LuxuryHotelVideo></LuxuryHotelVideo>
             <LatestPost></LatestPost>
             <Subscribe></Subscribe>
-            <ReactPagination></ReactPagination>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ResponsivePagination from 'react-responsive-pagination';
 import 'react-responsive-pagination/themes/classic.css';
+import { useLocation } from 'react-router-dom';
 
 const roomBooks =[
     {
@@ -70,6 +71,16 @@ const roomBooks =[
 ]
 
 const ViewMoreDetails = () => {
+
+    const { location } = useLocation();
+
+  // Check if location.state is null before trying to access data
+  if (!location.state || !location.state.data) {
+    return <div>No data available</div>;
+  }
+
+  const { image, _id,  description, rating } = location.state.data;
+  console.log(image, _id,  description, rating)
     const [currentPage, setCurrentPage] = useState(1); // Set the default page to 1
   const itemsPerPage = 1; // Number of items to display per page
   const totalPages = Math.ceil(roomBooks.length / itemsPerPage);

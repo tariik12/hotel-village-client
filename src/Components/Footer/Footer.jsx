@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <div  className="md:flex justify-evenly mt-10">
+        <div  className="md:flex justify-evenly text-white pt-10  bg-gradient-to-t from-[#f1f1f3cf] via-[#228eac97] to-[#f7f4f4b8]">
           <div>
             <h1 className="font-bold">QUICK LINKS</h1>
 <p>Best Online Rate Guarantee</p>

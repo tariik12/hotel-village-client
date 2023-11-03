@@ -10,7 +10,7 @@ const RoomCard = ({allRooms}) => {
         AOS.init();
       }, [])
     return (
-        <div className="md:flex justify-around mt-10 md:mx-4 ">
+        <div className="md:flex justify-around pt-10 md:mx-4 ">
         <div>
           {allRooms
             ?.slice() // Create a shallow copy of the array to avoid mutating the original

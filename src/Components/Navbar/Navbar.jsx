@@ -20,11 +20,11 @@ const nabLinks = (
                 
               }}
              whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Room</span></Link>
-      <Link  to='/'>
+      <Link  to='/allSpas'>
              <span style={{
                 
               }}
-             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Shop</span></Link>
+             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Spa</span></Link>
   </>
 );
 
@@ -54,10 +54,10 @@ const Navbar = () => {
     }`}>
   <div className="navbar-start">
     <div className="dropdown">
-      <label tabIndex={0} className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      <label tabIndex={0} className=" lg:hidden bg-gradient-to-t from-[#f1f1f3cf] via-[#228eac97] to-[#f7f4f4b8]">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3  p-2 shadow  rounded-box  text-black bg-orange-6 00">
+      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3  p-2 shadow  rounded-box  text-black bg-gradient-to-t from-[#f1f1f3cf] via-[#228eac97] to-[#f7f4f4b8] w-40">
       {nabLinks}
       </ul>
     </div>
@@ -65,7 +65,7 @@ const Navbar = () => {
     <motion.span style={{
                 
               }}
-             whileHover={{  scale: 1.1 }}  className="md:text-3xl text-white border-white    font-mono border-b-0 hover:border-b-2 md:ms-10 hover:text-orange-600 w-full ">
+             whileHover={{  scale: 1.1 }}  className="md:text-3xl text-white border-white    font-mono border-b-0 hover:border-b-2  md:ms-10 hover:text-orange-600 w-full ">
         Vibrant Vineyard <span className="text-orange-600 hover:text-white capitalize">Villas</span>
       </motion.span>
     </Link>
@@ -104,27 +104,21 @@ const Navbar = () => {
 
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-200 rounded-box w-52"
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gradient-to-t from-[#f1f1f3cf] via-[#228eac97] to-[#f7f4f4b8] rounded-box w-52"
                 >
                   {user ? (
                     <>
                       <Link
                         to="/profile"
-                        className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                        className="px-4 py-3 transition font-semibold"
                       >
                         Profile
                       </Link>
                       <Link
                         to="/dashboard"
-                        className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                        className="px-4 py-3 transition font-semibold"
                       >
                         Dashboard
-                      </Link>
-                      <Link
-                        to="/setting"
-                        className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
-                      >
-                        Settings & Privacy
                       </Link>
                       <div
                         onClick={() => {
@@ -132,7 +126,7 @@ const Navbar = () => {
                           toast.success("logout successful");
                           navigate("/login");
                         }}
-                        className="px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer duration-1000 "
+                        className="px-4 py-3 transition font-semibold cursor-pointer duration-1000 "
                       >
                         Logout
                       </div>
@@ -141,7 +135,7 @@ const Navbar = () => {
                     <>
                       <Link
                         to="/login"
-                        className="px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                        className="px-4 py-3 transition font-semibold"
                       >
                         Login
                       </Link>

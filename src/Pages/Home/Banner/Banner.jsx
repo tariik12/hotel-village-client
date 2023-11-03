@@ -1,12 +1,11 @@
 // import { TypeAnimation } from 'react-type-animation';
 import banner from '/banner1.mp4'
-import { useState } from 'react';
+
 import { motion } from "framer-motion"
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from 'react';
 const Banner = () => {
-    const [textColor, setTextColor] = useState('yellow');
 
     useEffect(() => {
         AOS.init();
@@ -24,10 +23,10 @@ const Banner = () => {
                 transition={{
                     duration: "2",
                     delay: "1"
-                }} className=' absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                }} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
                  hover:bg-[#1e1a1ab5] p-4 rounded-md'
                 data-aos="zoom-in">
-                <h3 className=" text-3xl text-white uppercase hover:border-b-4 border-orange-700 py-4 t">Hey There Welcome To The Hotel <span className='text-orange-700'> Village</span> <br /> <span>
+                <h3 className=" text-3xl text-white uppercase hover:border-b-4 border-orange-700 py-4">Hey There Welcome To The Hotel <span className='text-orange-700'> Village</span> <br /> <span>
                 
                   </span></h3>
 

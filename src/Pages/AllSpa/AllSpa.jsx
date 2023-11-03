@@ -1,14 +1,15 @@
 
 import { useGetHotelServicesDataQuery } from "../../redux/api/hotelVillageApi";
 
-import FoodCard from "./FoodCard";
+
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import SpaCard from "./SpaCard";
 
-const AllFood = () => {
+const AllSpa = () => {
     const {data:hotelServiceData } = useGetHotelServicesDataQuery()
-    const allFoods = hotelServiceData?.filter(({category}) =>category === "Well Food")
+    const allSpas = hotelServiceData?.filter(({category}) =>category === "Spa")
     const settings = {
         autoPlay:true,
         dots: true,
@@ -21,8 +22,8 @@ const AllFood = () => {
         <div>
             <Slider {...settings} className="mb-10">
             {
-              allFoods?.map((food) =><div key={food._id}>
-              <img className="w-full h-[250px] md:h-[450px]" src={food.image} alt="" />
+              allSpas?.map((spa) =><div key={spa._id}>
+              <img className="w-full h-[250px] md:h-[450px]" src={spa.image} alt="" />
            </div>
              
           
@@ -34,7 +35,7 @@ const AllFood = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
    {
-                allFoods?.map((food) =><FoodCard food={food}></FoodCard>
+                allSpas?.map((spa) =><SpaCard spa={spa}></SpaCard >
                    
                )
             }
@@ -43,4 +44,4 @@ const AllFood = () => {
     );
 };
 
-export default AllFood;
+export default AllSpa;

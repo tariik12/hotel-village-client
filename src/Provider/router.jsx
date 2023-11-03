@@ -10,6 +10,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import ViewMoreDetails from "../Components/ViewMoreDetails/ViewMoreDetails";
 import AllFood from "../Pages/AllFood/AllFood";
 import AllRoom from "../Pages/AllRoom/AllRoom";
+import AllSpa from "../Pages/AllSpa/AllSpa";
 
 export const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
         {
           path:'/allRooms',
           element:<AllRoom></AllRoom>
+        },
+        {
+          path:'/allSpas',
+          element:<AllSpa></AllSpa>
         },
         
       ]

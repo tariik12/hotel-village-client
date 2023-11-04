@@ -7,7 +7,7 @@ import Error from "../Components/Error/Error";
 import Home from "../Pages/Home/Home/Home";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
-import ViewMoreDetails from "../Components/ViewMoreDetails/ViewMoreDetails";
+
 import AllFood from "../Pages/AllFood/AllFood";
 import AllRoom from "../Pages/AllRoom/AllRoom";
 import AllSpa from "../Pages/AllSpa/AllSpa";
@@ -20,6 +20,9 @@ import AddCardProduct from "../Pages/Dashboard/User/AddCardProduct";
 import PaymentHistory from "../Pages/Dashboard/User/PaymentHistory";
 import HotelNotice from "../Pages/Dashboard/User/HotelNotice";
 import UserFeedback from "../Pages/Dashboard/User/userFeedback";
+import BoughtProducts from "../Pages/Dashboard/User/BoughtProducts";
+import Login from "../Pages/Authentication/Login";
+import Register from "../Pages/Authentication/Register";
 
 export const router = createBrowserRouter([
     {
@@ -76,25 +79,34 @@ path:'ourEmploy',
 element:<OurEmployer></OurEmployer>
 },
         {
-path:'',
+path:'selectedProducts',
 element:<AddCardProduct></AddCardProduct>
 },
         {
-path:'',
+path:'paymentHistory',
 element:<PaymentHistory></PaymentHistory>
 },
         {
-path:'',
+path:'hotelNotice',
 element:<HotelNotice></HotelNotice>
 },
         {
-path:'',
+path:'userFeedback',
 element:<UserFeedback></UserFeedback>
+},
+        {
+path:'boughtProducts',
+element:<BoughtProducts></BoughtProducts>
 },
       ]
     },
     {
-      path:"/viewMoreDetails",
-      element:<ViewMoreDetails></ViewMoreDetails>
+      path:"/login",
+      element:<Login></Login>
+    }
+    ,
+    {
+      path:"/register",
+      element:<Register></Register>
     }
   ]);

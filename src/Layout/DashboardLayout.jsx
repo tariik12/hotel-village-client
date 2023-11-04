@@ -6,7 +6,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
 
-    const isAdmin = false;
+    const isAdmin = true;
    
     return (
         <div>
@@ -33,8 +33,8 @@ const DashboardLayout = () => {
         <li><NavLink to='/dashboardLayout/selectedProducts'><FaHome/>My Selected Product</NavLink></li>
         <li><NavLink to='/dashboardLayout/boughtProducts'><FaCalendarAlt/>My Bought Products</NavLink></li>
         <li><NavLink to='/dashboardLayout/paymentHistory'><FaWallet/> Payment History</NavLink></li>
-        <li><NavLink to='/dashboardLayout/paymentHistory'><FaWallet/> Hotel Notice</NavLink></li>
-        <li><NavLink to='/dashboardLayout/paymentHistory'><FaWallet/> My Feedback for hotel</NavLink></li>
+        <li><NavLink to='/dashboardLayout/hotelNotice'><FaWallet/> Hotel Notice</NavLink></li>
+        <li><NavLink to='/dashboardLayout/userFeedback'><FaWallet/> My Feedback for hotel</NavLink></li>
         </>
       }
       <div className="divider"></div>

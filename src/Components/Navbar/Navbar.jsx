@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
 import { motion } from "framer-motion"
+import { useDispatch } from 'react-redux';
+import { signOut } from 'firebase/auth';
+import { logout } from '../../redux/user/userSlice';
+import toast from 'react-hot-toast';
+import auth from '../../../firebase.config';
 const nabLinks = (
 
   <>
@@ -30,6 +35,14 @@ const nabLinks = (
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const handleLogout = () =>{
+    signOut(auth);
+    dispatch(logout())
+    navigate('/')
+    toast.success("logout successful");
+  }
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -121,11 +134,7 @@ const Navbar = () => {
                         Dashboard
                       </Link>
                       <div
-                        onClick={() => {
-                          logOut();
-                          toast.success("logout successful");
-                          navigate("/login");
-                        }}
+                       onClick={handleLogout}
                         className="px-4 py-3 transition font-semibold cursor-pointer duration-1000 "
                       >
                         Logout

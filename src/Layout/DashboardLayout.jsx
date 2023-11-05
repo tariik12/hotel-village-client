@@ -23,6 +23,7 @@ const DashboardLayout = () => {
       {
         isAdmin?<>
         <li><NavLink to='/dashboardLayout/addProducts'><FaCalendarAlt/>Add Products</NavLink></li>
+        <li><NavLink to='/dashboardLayout/manageProducts'><FaCalendarAlt/>Manage Products</NavLink></li>
         <li><NavLink to='/dashboardLayout/allUsers'><FaHome/>All Users</NavLink></li>
         <li><NavLink to='/dashboardLayout/customerHandle'><FaHome/>Customer Handle</NavLink></li>
         <li><NavLink to='/dashboardLayout/ourEmploy'><FaHome/>Our Employ</NavLink></li>

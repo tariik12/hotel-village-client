@@ -23,6 +23,7 @@ import UserFeedback from "../Pages/Dashboard/User/userFeedback";
 import BoughtProducts from "../Pages/Dashboard/User/BoughtProducts";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
+import ManageProduct from "../Pages/Dashboard/Admin/ManageProduct";
 
 export const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
         {
 path:'addProducts',
 element:<AddProducts></AddProducts>
+},
+        {
+path:'manageProducts',
+element:<ManageProduct></ManageProduct>
 },
         {
 path:'allUsers',

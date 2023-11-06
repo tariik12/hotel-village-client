@@ -8,13 +8,30 @@ const options = [
   { value: 'Daily 6:30 am - 11:00 am', label: 'Daily 6:30 am - 11:00 am' },
 ];
 
+
+const image_hosting_Token = '3a33e8b148e73275cb371103f11b2579'
 const AddFood = () => {
     const { register, handleSubmit, reset } = useForm();
-    const [selectedSub_Category, setSelectedSub_Category] = useState(null);
+    const [availableTime, setAvailableTime] = useState(null);
 const [addHotelServicesData,{data, error}] = useAddHotelServicesDataMutation()
+const img_hosting_url = `https://api.imgbb.com/1/upload?expiration=600&key=${image_hosting_Token}`
   
    const onSubmit =(data) =>{
-    addHotelServicesData({...data, status:'pending'})
+    const formData = new FormData();
+    formData.append('image',data.image[0])
+    fetch(img_hosting_url,{
+      method:'POST',
+      body:formData
+    })
+    .then(res =>res.json())
+    .then(imgResponse =>{
+      if(imgResponse.success){
+const imageUrl = imgResponse.data.display_url;
+
+addHotelServicesData({...data, status:'pending', image:imageUrl})
+      }
+    })
+
     reset();
 
 console.log(data)
@@ -58,8 +75,8 @@ console.log(data)
           />
  {/* AVAILABLE TIME */}
           <CreatableSelect
-                                    defaultValue={selectedSub_Category}
-                                    onChange={setSelectedSub_Category}
+                                    defaultValue={availableTime}
+                                    onChange={setAvailableTime}
                                     options={options }
                                     isMulti
                                     required

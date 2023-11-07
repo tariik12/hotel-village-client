@@ -1,13 +1,9 @@
 
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
-import { useEffect,  } from "react";
+
 import { useGetHotelServicesDataQuery } from "../../../redux/api/hotelVillageApi";
 import ShowRoomsModal from "../../../Components/ShowRoomsModal/ShowRoomsModal";
 const RoomBook = () => {
-        useEffect(() => {
-            AOS.init();
-          }, []);
+
     
 const {data:hotelServicesData} = useGetHotelServicesDataQuery()
 const ourRooms = hotelServicesData?.filter(({category}) => category ==='Our Room');

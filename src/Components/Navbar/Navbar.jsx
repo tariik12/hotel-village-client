@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, } from 'react-router-dom';
 import { motion } from "framer-motion"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from 'firebase/auth';
 import { logout } from '../../redux/user/userSlice';
 import toast from 'react-hot-toast';
@@ -35,6 +35,7 @@ const nabLinks = (
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
+  const {name,email, photo} = useSelector((state) =>state.userSlice);
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const handleLogout = () =>{
@@ -58,10 +59,8 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  const user = true;
   return (
-   <div className='fixed z-50 w-full top-0' >
+   <div className='fixed z-30 w-full top-0' >
 <div className={`navbar ${
       scrolling ? 'bg-black text-orange-400 font-bold' : 'bg-[#2b252529] text-white'
     }`}>
@@ -90,15 +89,15 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end me-6 ">
-  <div className="dropdown dropdown-end p-1 bg-orange-600 rounded-full">
-                {user ? (
+  <div className="dropdown dropdown-end p-1  rounded-full">
+                {email ? (
                   <>
                     <label
                       tabIndex={0}
                       className="btn btn-ghost btn-circle avatar"
                     >
-                      <div className="w-10 rounded-full">
-                        <img src={user?.photoURL} title={user?.displayName} />
+                      <div className="w-10 rounded-full ">
+                        <img src={photo} title={name} />
                       </div>
                     </label>
                   </>
@@ -108,7 +107,7 @@ const Navbar = () => {
                       tabIndex={0}
                       className="btn btn-ghost btn-circle avatar"
                     >
-                      <div className="w-10 rounded-full border-white border-2 z-20">
+                      <div className="w-10 rounded-full border-2 z-50">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbm4AFxi4zALrc_0Rv-m0yH2o0TrL3yuG09tTBAno&s" />
                       </div>
                     </label>
@@ -119,7 +118,7 @@ const Navbar = () => {
                   tabIndex={0}
                   className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gradient-to-t from-[#f1f1f3cf] via-[#228eac97] to-[#f7f4f4b8] rounded-box w-52"
                 >
-                  {user ? (
+                  {email ? (
                     <>
                       <Link
                         to="/profile"

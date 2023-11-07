@@ -28,10 +28,10 @@ const {isLoading, isError, error,email} = useSelector((state) =>state.userSlice)
   }, [password, confirmPassword]);
 
 
-  const onSubmit = ({ name, email, password }) => {
+  const onSubmit = ({ name, email, password, photo }) => {
     // Email Password signup
-    dispatch(createUser({email, password, name}))
-    console.log(name, email, password);
+    dispatch(createUser({email, password, name, photo}))
+    console.log(name, email, password, photo);
   };
   useEffect(()=>{
     if(isError || error){
@@ -50,12 +50,12 @@ const {isLoading, isError, error,email} = useSelector((state) =>state.userSlice)
   };
 
   return (
-    <div className="flex max-w-7xl mx-auto h-screen items-center">
+    <div className="md:flex max-w-7xl mx-auto h-screen items-center">
       <Toaster/>
-      <div className="w-1/2">
+      <div className="md:w-1/2">
         <img src='https://i.pinimg.com/originals/77/1b/8e/771b8ee247d670457faea7265818578f.png' className="h-full w-full" alt="" />
       </div>
-      <div className="w-1/2  grid place-items-center">
+      <div className="md:w-1/2  grid place-items-center">
         <div className="bg-primary/5 w-full max-w-sm rounded-lg grid place-items-center p-10">
           <h1 className="mb-10 font-medium text-2xl">Sign up</h1>
           <form className="space-y-5 w-full" onSubmit={handleSubmit(onSubmit)}>
@@ -75,6 +75,15 @@ const {isLoading, isError, error,email} = useSelector((state) =>state.userSlice)
                 id="email"
                 className="w-full rounded-md"
                 {...register('email')}
+              />
+            </div>
+            <div className="flex flex-col items-start">
+              <label htmlFor="photo">Photo</label>
+              <input
+                type="url"
+                id="photo"
+                className="w-full rounded-md"
+                {...register('photo')}
               />
             </div>
             <div className="flex flex-col items-start">

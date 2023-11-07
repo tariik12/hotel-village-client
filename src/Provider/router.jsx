@@ -24,6 +24,7 @@ import BoughtProducts from "../Pages/Dashboard/User/BoughtProducts";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
 import ManageProduct from "../Pages/Dashboard/Admin/ManageProduct";
+import PhotoGraphy from "../Pages/PhotoGraphy/PhotoGraphy";
 
 export const router = createBrowserRouter([
     {
@@ -113,5 +114,9 @@ element:<BoughtProducts></BoughtProducts>
     {
       path:"/register",
       element:<Register></Register>
+    },
+    {
+      path:'/photoGraphy',
+      element:<PhotoGraphy></PhotoGraphy>
     }
   ]);

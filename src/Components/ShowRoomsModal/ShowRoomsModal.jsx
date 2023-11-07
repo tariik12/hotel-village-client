@@ -1,3 +1,6 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect,  } from "react";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -17,7 +20,9 @@ import PhotoSlider from "../PhotoSlider/PhotoSlider";
 
 
 const ShowRoomsModal = ({ourRooms}) => {
-  
+  useEffect(() => {
+    AOS.init();
+  }, []);
 const settings = {
    autoplay:true,
     infinite: true,
@@ -69,7 +74,7 @@ setSelectedService(name);
 <Slider {...settings}>
              {
                 ourRooms?.map((room) =>
-                    <div data-aos="zoom-in-down" className="hover:shadow-[#f1f1f3ef]  shadow-lg md:w-[300px] h-[470px] border-2 hover:border-orange-600 hover:shadow-xl   rounded-2xl containWid p-2 md:ms-10 bg-white" style={{ boxShadow: '2px 2px 4px  1px #060a099f ' }} key={room._id}>
+                    <div data-aos="zoom-in-down" data-aos-duration="2000" className="hover:shadow-[#f1f1f3ef]  shadow-lg md:w-[300px] h-[470px] border-2 hover:border-orange-600 hover:shadow-xl   rounded-2xl containWid p-2 md:ms-10 bg-white" style={{ boxShadow: '2px 2px 4px  1px #060a099f ' }} key={room._id}>
                    <Link className="" to='/'>
                    <img onClick={()=>openModal(room.name)} src={room.image} title={`Show ${room.name} Gallery`} alt={`${room.name}'Gallery'`} className=" w-full h-[200px] overflow-hidden hover:shadow-2xl hover:rounded-lg"/></Link>
                    

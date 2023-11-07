@@ -1,12 +1,16 @@
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { signInUser } from '../../redux/user/userSlice';
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const onSubmit = ({ email, password }) => {
     // Email Password Login
-
+    dispatch(signInUser({ email, password }));
+    navigate('/')
     console.log(email, password);
   };
 
@@ -15,11 +19,11 @@ const Login = () => {
   };
 
   return (
-    <div className="flex max-w-7xl h-screen items-center mx-auto">
-      <div className="w-1/2">
+    <div className="md:flex max-w-7xl h-screen items-center mx-auto overflow-hidden">
+      <div className="md:w-1/2">
         <img src='https://i.pinimg.com/originals/77/1b/8e/771b8ee247d670457faea7265818578f.png' className="h-full w-full" alt="" />
       </div>
-      <div className="w-1/2 grid place-items-center">
+      <div className="md:w-1/2 grid place-items-center">
         <div className="bg-primary/5 w-full max-w-sm rounded-lg grid place-items-center p-10">
           <h1 className="mb-10 font-medium text-2xl">Login</h1>
           <form className="space-y-3 w-full" onSubmit={handleSubmit(onSubmit)}>
@@ -51,7 +55,7 @@ const Login = () => {
                 Don&apos;t have an account?{' '}
                 <span
                   className="text-primary hover:underline cursor-pointer"
-                  onClick={() => navigate('/signup')}
+                  onClick={() => navigate('/register')}
                 >
                   Sign up
                 </span>

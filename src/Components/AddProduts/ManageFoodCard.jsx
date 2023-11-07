@@ -6,9 +6,10 @@ const myStyles = {
 }
 import '@smastrom/react-rating/style.css'
 import { GrMapLocation } from "react-icons/gr";
-import { useUpdateHotelServiceDataMutation } from '../../redux/api/hotelVillageApi';
+import { useDeleteHotelServiceDataMutation, useUpdateHotelServiceDataMutation } from '../../redux/api/hotelVillageApi';
 const ManageFoodCard = ({food}) => {
     const [updateHotelServiceData, {data,error}] = useUpdateHotelServiceDataMutation();
+    const [deleteHotelServiceData] = useDeleteHotelServiceDataMutation()
     console.log(data,error)
     const handleUpdate =(id, updatedStatus) =>{
         const data ={
@@ -21,6 +22,9 @@ const ManageFoodCard = ({food}) => {
         updateHotelServiceData(options)
     }
 
+    const handleDelete =(id) =>{
+      deleteHotelServiceData(id)
+    }
     let updatedStatus;
     if (food.status === 'pending') {
         updatedStatus = 'approved';
@@ -46,6 +50,7 @@ const ManageFoodCard = ({food}) => {
 <div className=" flex justify-center">
 
              <button onClick={()=>handleUpdate(food._id, updatedStatus)} className=" mt-4 bg-slate-50 px-3 py-2 border-2 border-orange-400 hover:text-white hover:bg-[#ff4500] hover:border-4 rounded-xl hover:border-[#ff4500] " >{food.status}</button>
+             <button onClick={()=>handleDelete(food._id)} className=" mt-4 bg-slate-50 px-3 py-2 border-2 border-orange-400 hover:text-white hover:bg-[#ff4500] hover:border-4 rounded-xl hover:border-[#ff4500] " >delete</button>
 </div>
           </div>
    </div>

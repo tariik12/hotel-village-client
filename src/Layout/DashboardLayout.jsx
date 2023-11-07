@@ -19,7 +19,7 @@ const DashboardLayout = () => {
   </div> 
   <div className="drawer-side ">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-    <ul className="menu p-4 w-80 h-full bg-[#228eac97] text-white">
+    <ul className="menu p-4 w-80 h-full bg-[#fa5931f9] text-white">
       {
         isAdmin?<>
         <li><NavLink to='/dashboardLayout/addProducts'><FaCalendarAlt/>Add Products</NavLink></li>

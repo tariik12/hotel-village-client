@@ -3,7 +3,7 @@ export const hotelVillageApi = createApi({
   reducerPath:'api',
   tagTypes:['hotelTag'],
   baseQuery:fetchBaseQuery({
-    baseUrl:'https://hotel-village-server.vercel.app/'
+    baseUrl:'https://hotel-village-server.vercel.app'
   }),
   endpoints:(builder) =>({
    getLatestProducts:builder.query({
@@ -31,10 +31,19 @@ export const hotelVillageApi = createApi({
       body:data,
     }),
     invalidatesTags:['hotelTag']
+   }),
+
+   deleteHotelServiceData:builder.mutation({
+     query:(id) =>({
+      url:`/hotelServicesData/${id}`,
+       method:'DELETE',  
+     }),
+     invalidatesTags:['hotelTag']
    })
   }),
+
  
 
 })
 
-export const {useGetLatestProductsQuery, useGetServices3Query, useGetHotelServicesDataQuery, useAddHotelServicesDataMutation, useUpdateHotelServiceDataMutation} = hotelVillageApi;
+export const {useGetLatestProductsQuery, useGetServices3Query, useGetHotelServicesDataQuery, useAddHotelServicesDataMutation, useUpdateHotelServiceDataMutation, useDeleteHotelServiceDataMutation} = hotelVillageApi;

@@ -40,7 +40,10 @@ const RoomCard = ({allRooms}) => {
     
                 </div>
                 <p className="px-5 mt-5 md:w-3/4 mx-auto"  >{description} </p>
-                <div><button className='bg-slate-700 py-2 px-4 rounded-3xl text-white text-xs'> book Now</button></div>
+                <div className=" flex justify-center">
+
+                  <button className=" mt-4 bg-slate-50 px-3 py-2 border-2 border-orange-400 hover:text-white hover:bg-[#ff4500] hover:border-4 rounded-xl hover:border-[#ff4500] " >Room Book</button>
+</div>
                 </div>
               </div>
             ))}

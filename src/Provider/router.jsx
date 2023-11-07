@@ -19,7 +19,7 @@ import CustomerHandle from "../Pages/Dashboard/Admin/CustomerHandle";
 import AddCardProduct from "../Pages/Dashboard/User/AddCardProduct";
 import PaymentHistory from "../Pages/Dashboard/User/PaymentHistory";
 import HotelNotice from "../Pages/Dashboard/User/HotelNotice";
-import UserFeedback from "../Pages/Dashboard/User/userFeedback";
+
 import BoughtProducts from "../Pages/Dashboard/User/BoughtProducts";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";

@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { useGetHotelServicesDataQuery } from '../../../redux/api/hotelVillageApi';
 import ShowLatestModal from '../../../Components/ShowLatestPostModal/ShowLatestPostModal';
+import Header from '../../../Components/Header/Header';
 
 const LatestPost = () => {
     const {data:latestPosts } = useGetHotelServicesDataQuery()
@@ -11,10 +12,14 @@ const LatestPost = () => {
         AOS.init();
       }, [])
    return (
-    <div className="md:flex justify-around mt-10  ">
+    <div>
+      <Header header="Latest Post"></Header>
+    <div className="md:flex justify-around   ">
    <ShowLatestModal latestPosts={latestPosts}></ShowLatestModal>
       
   </div>
+
+    </div>
   
 )
 };

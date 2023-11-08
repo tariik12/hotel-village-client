@@ -2,6 +2,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect} from "react";
+import Header from '../../../Components/Header/Header';
 const ourServices = [
     {
         title: 'Swimming Pool',
@@ -43,10 +44,11 @@ const OurService = () => {
     },[] );
     return (
         <div className=''>
+            <Header header="Our Services"></Header>
     <div className='md:flex gap-3 md:justify-evenly'>
         {
             ourServices.map(({title, image, description}) => (
-                <div key={image} className='relative p-10 bg-white rounded-md shadow-lg mt-10 hover:shadow-xl w-[250px] mx-auto'  data-aos="flip-left" data-aos-duration="2000">
+                <div key={image} className='relative md:p-10 bg-white rounded-md shadow-lg  hover:shadow-xl mb-5  md:w-[250px] mx-2'  data-aos="flip-left" data-aos-duration="2000">
                     <img className='w-full' src={image} alt={title} />
                     <div className='opacity-0 hover:opacity-100 transition-opacity duration-300 absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center text-center  hover:bg-gradient-to-t hover:from-[#f1f1f3cf] hover:via-[#228eac97] hover:to-[#f7f4f4b8] text-white p-2 border-2 hover:border-orange-700 hover:rounded-md'>
                         <h2 className='text-xl font-bold text-orange-700 '>{title}</h2>

@@ -46,25 +46,27 @@ slick-next.hover::after {
     transform-origin: 0%;
   }
 
-  .containWid {
-    width: 350px !important;
-   
-   
 
-  }
 
-  /* .slick-dots{
-    margin-top: 10px !important;
-    position: absolute !important;
-  } */
-  /* .wid {
-    width: 350px !important;
-    display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-   
+  @media (min-width: 1400px) { 
+    .containWid {
+      width: 350px !important;
+     
+     
+  
+    }
+   }
+  @media (min-width: 500px) { 
+    .containWid {
+      width: 350px !important;
+     
+     
+     
+  
+    }
+   }
 
-  } */
+  
 
   .automated{
     -webkit-clip-path: polygon(39% 27%, 66% 30%, 100% 0, 100% 90%, 79% 92%, 55% 79%, 33% 77%, 0 100%, 0 14%, 20% 11%);

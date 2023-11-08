@@ -28,30 +28,43 @@ const settings = {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
+    
     className:'',
      responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1400,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
+        initialSlide: 1,
         infinite: true,
         dots: true
       }
     },
     {
-      breakpoint: 600,
+      breakpoint: 1200,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        infinite: true,
+        dots: true
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 911,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 1,
+      }
+    },
+    {
+      breakpoint: 576,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        initialSlide: 1,
       }
     }
   ]
@@ -74,7 +87,7 @@ setSelectedService(name);
 <Slider {...settings}>
              {
                 ourRooms?.map((room) =>
-                    <div data-aos="zoom-in-down" data-aos-duration="2000" className="hover:shadow-[#f1f1f3ef]  shadow-lg md:w-[300px] h-[470px] border-2 hover:border-orange-600 hover:shadow-xl   rounded-2xl containWid p-2 md:ms-10 bg-white" style={{ boxShadow: '2px 2px 4px  1px #060a099f ' }} key={room._id}>
+                    <div data-aos="zoom-in-down" data-aos-duration="2000" className="hover:shadow-[#f1f1f3ef]  shadow-lg  border-2 hover:border-orange-600 hover:shadow-xl   rounded-2xl  p-2 containWid  bg-white" style={{ boxShadow: '2px 2px 4px  1px #060a099f ' }} key={room._id}>
                    <Link className="" to='/'>
                    <img onClick={()=>openModal(room.name)} src={room.image} title={`Show ${room.name} Gallery`} alt={`${room.name}'Gallery'`} className=" w-full h-[200px] overflow-hidden hover:shadow-2xl hover:rounded-lg"/></Link>
                    

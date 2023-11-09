@@ -29,9 +29,9 @@ const Banner = () => {
      data-aos="zoom-in"
       /* Shift the entire element to the right */
    >
-     <h3 className="md:text-5xl text-xl text-white uppercase hover:border-b-4 border-orange-700 py-4 text-left">Hey There, Welcome<br /> <span className='text-orange-700 text-right'>  To The Hotel Village</span> <br /> <span></span></h3>
-     <motion.h3 style={{}} className='text-white text-4xl'>
-       Hotline :<span className="text-orange-600 capitalize text-4xl">+880179542</span>
+     <h3 className="md:text-5xl text-xl text-white uppercase hover:border-b-4 border-[#ff4500] py-4 text-left">Hey There, Welcome<br /> <span className='text-[#ff4500]  text-right'>  To The Hotel Village</span> <br /> <span></span></h3>
+     <motion.h3 style={{}} className='text-white text-4xl uppercase'>
+       Hotline :<span className="text-[#ff4500]  capitalize text-4xl">+880179542</span>
      </motion.h3>
    </motion.h3>
 </div>

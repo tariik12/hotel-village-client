@@ -76,3 +76,7 @@ height: 700px;
 background: #F8FAFC;
 }
 
+.active-link{
+  color: #ff4500 !important;
+}
+

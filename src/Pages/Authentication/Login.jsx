@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { signInUser } from '../../redux/user/userSlice';
+import { googleLoginUser, signInUser } from '../../redux/user/userSlice';
 import toast from 'react-hot-toast';
 import { useEffect } from 'react';
 
@@ -17,7 +17,7 @@ const Login = () => {
 
 
   const handleGoogleLogin = () => {
-    //  Google Login
+   dispatch(googleLoginUser())
   };
   useEffect(() =>{
 

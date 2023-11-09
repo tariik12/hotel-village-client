@@ -3,7 +3,7 @@ import { useForm, useWatch } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import toast,{Toaster} from 'react-hot-toast';
-import { createUser } from '../../redux/user/userSlice';
+import { createUser, googleLoginUser } from '../../redux/user/userSlice';
 
 const Register = () => {
   const { handleSubmit, register, control } = useForm();
@@ -46,7 +46,7 @@ const {isLoading, isError, error,email} = useSelector((state) =>state.userSlice)
     }
   },[isLoading,email,navigate])
   const handleGoogleLogin = () => {
-    // Google Login
+   dispatch(googleLoginUser())
   };
 
   return (

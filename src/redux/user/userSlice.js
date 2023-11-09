@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import {  GoogleAuthProvider, createUserWithEmailAndPassword, getRedirectResult, signInWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
 import auth from '../../../firebase.config';
 
 const initialState = {
@@ -41,6 +41,23 @@ export const signInUser = createAsyncThunk('userSlice/signInUser', async ({ emai
     };
   } catch (error) {
     console.error('Error signing in:', error);
+    throw error;
+  }
+});
+export const googleLoginUser = createAsyncThunk('userSlice/googleSignInUser', async () => {
+  const googleProvider = new GoogleAuthProvider();
+  try {
+
+    const data = await signInWithPopup(auth, googleProvider);
+    await getRedirectResult(auth)
+    console.log(data);
+    return {
+      email: data.user.email,
+      name: data.user.displayName,
+      photo: data.user.photoURL,
+    };
+  } catch (error) {
+    console.error('Error google signing in:', error);
     throw error;
   }
 });
@@ -106,6 +123,30 @@ const userSlice = createSlice({
         state.error = '';
       })
       .addCase(signInUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.email = '';
+        state.name = '';
+        state.photo = '';
+        state.error = action.error.message;
+      })
+      .addCase(googleLoginUser.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+        state.email = '';
+        state.name = '';
+        state.photo = '';
+        state.error = '';
+      })
+      .addCase(googleLoginUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.name = payload.name;
+        state.email = payload.email;
+        state.photo = payload.photo;
+        state.error = '';
+      })
+      .addCase(googleLoginUser.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.email = '';

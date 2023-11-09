@@ -1,43 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, } from 'react-router-dom';
+import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import { motion } from "framer-motion"
 import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from 'firebase/auth';
 import { logout } from '../../redux/user/userSlice';
 import toast from 'react-hot-toast';
 import auth from '../../../firebase.config';
-const nabLinks = (
 
-  <>
-    
-      <Link  to='/'>
-             <span style={{
-                
-              }}
-             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Home</span></Link>
-      <Link  to='/allFoods'>
-             <span style={{
-                
-              }}
-             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Food</span></Link>
-      <Link  to='/allRooms'>
-             <span style={{
-                
-              }}
-             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Room</span></Link>
-      <Link  to='/allSpas'>
-             <span style={{
-                
-              }}
-             whileHover={{  scale: 1.1 }} className="md:text-xl text-white  border-b-0 hover:border-b-4 border-orange-600">Spa</span></Link>
-  </>
-);
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
   const {name,email, photo} = useSelector((state) =>state.userSlice);
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const location = useLocation();
+  const activeRoute = location.pathname;
   const handleLogout = () =>{
     signOut(auth);
     dispatch(logout())
@@ -59,6 +36,26 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const isRouteActive = (route) => {
+    return activeRoute === route ? 'active-link' : '';
+  };
+  const nabLinks = (
+
+    <>
+      
+        <Link  to='/' className={`nav-link md:text-xl font-bold uppercase text-white  border-b-0 hover:border-b-4 border-orange-600 ${isRouteActive('/')}`}
+               >
+                Home</Link>
+        <Link  to='/allFoods' className={`nav-link md:text-xl font-bold uppercase text-white  border-b-0 hover:border-b-4 border-orange-600 ${isRouteActive('/allFoods')}`}
+                >
+                Food</Link>
+        <Link  to='/allRooms' className={`nav-link md:text-xl font-bold uppercase text-white  border-b-0 hover:border-b-4 border-orange-600 ${isRouteActive('/allRooms')}`}  >
+               Room</Link>
+        <Link  to='/allSpas' className={`nav-link md:text-xl font-bold uppercase text-white  border-b-0 hover:border-b-4 border-orange-600 ${isRouteActive('/allSpas')}`} >
+              Spa</Link>
+    </>
+  );
   return (
    <div className='fixed z-30 w-full top-0' >
 <div className={`navbar ${
@@ -71,21 +68,21 @@ const Navbar = () => {
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3  p-2 shadow  rounded-box  text-black bg-gradient-to-t from-[#f1f1f3cf] via-[#228eac97] to-[#f7f4f4b8] w-40">
       {nabLinks}
+      
       </ul>
     </div>
-    <Link className=' ' to='/'>
+    <Link className='font-boldb  ' to='/'>
     <motion.span style={{
                 
               }}
-             whileHover={{  scale: 1.1 }}  className="md:text-3xl text-white border-white    font-mono border-b-0 hover:border-b-2  md:ms-10 hover:text-orange-600 w-full ">
-        Vibrant Vineyard <span className="text-orange-600 hover:text-white capitalize">Villas</span>
+             whileHover={{  scale: 1.1 }}  className="md:text-3xl text-white border-white    font-mono border-b-0 hover:border-b-2  md:ms-10 hover:text-[#ff4500] w-full uppercase">
+        Vibrant Vineyard <span className="text-[#ff4500] hover:text-white ">Villas</span>
       </motion.span>
     </Link>
   </div>
   <div className="navbar-center hidden lg:flex  ">
     <ul className="menu menu-horizontal px-1 gap-4">
     {nabLinks}
-   
     </ul>
   </div>
   <div className="navbar-end me-6 ">
@@ -122,28 +119,28 @@ const Navbar = () => {
                     <>
                       <Link
                         to="/profile"
-                        className="px-4 py-3 transition font-semibold"
+                        className={`nav-link md:text-xl font-bold uppercase text-white  border-b-0 hover:border-b-4 border-orange-600 ${isRouteActive('/profile')}`} 
                       >
                         Profile
                       </Link>
                       <Link
                         to="/dashboardLayout"
-                        className="px-4 py-3 transition font-semibold"
+                        className={`nav-link md:text-xl font-bold uppercase text-white  border-b-0 hover:border-b-4 border-orange-600 ${isRouteActive('/dashboardLayout')}`} 
                       >
                         Dashboard
                       </Link>
-                      <div
+                      <Link
                        onClick={handleLogout}
-                        className="px-4 py-3 transition font-semibold cursor-pointer duration-1000 "
+                       className={`nav-link md:text-xl font-bold uppercase text-white  border-b-0 hover:border-b-4 border-orange-600 ${isRouteActive('/login')}`} 
                       >
                         Logout
-                      </div>
+                      </Link>
                     </>
                   ) : (
                     <>
                       <Link
                         to="/login"
-                        className="px-4 py-3 transition font-semibold"
+                        className={`nav-link md:text-xl font-bold uppercase text-white  border-b-0 hover:border-b-4 border-orange-600 ${isRouteActive('/login')}`} 
                       >
                         Login
                       </Link>

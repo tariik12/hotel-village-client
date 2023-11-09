@@ -1,23 +1,37 @@
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { signInUser } from '../../redux/user/userSlice';
+import toast from 'react-hot-toast';
+import { useEffect } from 'react';
+
 const Login = () => {
   const { register, handleSubmit } = useForm();
+  const {isLoading,email, isError, error} =useSelector((state)=>state.userSlice) 
   const navigate = useNavigate();
   const dispatch = useDispatch()
 
-  const onSubmit = ({ email, password }) => {
-    // Email Password Login
-    dispatch(signInUser({ email, password }));
-    navigate('/')
-    console.log(email, password);
+  const onSubmit = ({ email, password }) =>{
+    dispatch(signInUser({email, password}))
   };
+
 
   const handleGoogleLogin = () => {
     //  Google Login
   };
+  useEffect(() =>{
 
+    if(isError || error){
+      toast.error(error)
+    }
+  },[isError, error])
+
+  useEffect(() =>{
+    if(!isLoading && email){
+      toast.success('Wow !! your Sing In Successful')
+      navigate('/')
+    }
+  },[isLoading,email, navigate])
   return (
     <div className="md:flex max-w-7xl h-screen items-center mx-auto overflow-hidden">
       <div className="md:w-1/2">

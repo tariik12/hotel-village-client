@@ -11,18 +11,14 @@ const options = [
 const AddRoom = () => {
     const { register, handleSubmit, reset } = useForm();
     const [selectedSub_Category, setSelectedSub_Category] = useState(null);
-
-    const onCancel = () => {
-      reset();
-      
-    };
   
    const onSubmit =(data) =>{
 console.log(data)
+reset()
    }
     return (
         <div>
-          <h3 className=" text-2xl text-orange-700 hover:border-white hover:border-b-2 w-64 mb-10 mx-auto">Add New Food</h3>
+          <h3 className=" text-2xl text-orange-700 hover:border-white hover:border-b-2 w-64 mb-10 mx-auto">Add New Room</h3>
            <form onSubmit={handleSubmit(onSubmit)}>
 
         <div className="flex flex-col gap-3">
@@ -32,10 +28,10 @@ console.log(data)
             type="text"
             id="name"
             {...register('name')}
-            placeholder="Food Name"
+            placeholder="Room Name"
           />  
            {/*CATEGORY*/}
-          <input  className=" py-2 px-3 border-b-2 hover:border-orange-700 w-[240px] md:w-[500px] mx-auto" defaultValue='Well Food' type="text" placeholder="" id="category"
+          <input  className=" py-2 px-3 border-b-2 hover:border-orange-700 w-[240px] md:w-[500px] mx-auto" defaultValue='Our Room' type="text" placeholder="" id="category"
             {...register('category')}  readOnly />
           {/* SCHEDULE */}
              <select
@@ -55,7 +51,7 @@ console.log(data)
             type="number"
             id="price"
             {...register('price')}
-            placeholder="Food Price"
+            placeholder="Room Price"
           />
  {/* AVAILABLE TIME */}
           <CreatableSelect
@@ -74,7 +70,7 @@ console.log(data)
             cols={10}
             rows={4}
             id="description"
-            placeholder="Food Description"
+            placeholder="Room Description"
             {...register('description')}
           />
            {/* image */}

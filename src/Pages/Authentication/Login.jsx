@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { googleLoginUser, signInUser } from '../../redux/user/userSlice';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 
 const Login = () => {
@@ -34,6 +34,7 @@ const Login = () => {
   },[isLoading,email, navigate])
   return (
     <div className="md:flex max-w-7xl h-screen items-center mx-auto overflow-hidden">
+       <Toaster/>
       <div className="md:w-1/2">
         <img src='https://i.pinimg.com/originals/77/1b/8e/771b8ee247d670457faea7265818578f.png' className="h-full w-full" alt="" />
       </div>

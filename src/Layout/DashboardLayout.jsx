@@ -9,7 +9,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 const DashboardLayout = () => {
   const location = useLocation();
   const activeRoute = location.pathname;
-    const isAdmin = true;
+    const isAdmin = false;
     const isRouteActive = (route) => {
       return activeRoute === route ? 'active-link' : '';
     };

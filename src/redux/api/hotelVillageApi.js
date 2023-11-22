@@ -30,6 +30,7 @@ export const hotelVillageApi = createApi({
       method:'POST',
       body:data,
     }),
+ 
     invalidatesTags:['hotelTag']
    }),
 
@@ -41,8 +42,6 @@ export const hotelVillageApi = createApi({
      invalidatesTags:['hotelTag']
    })
   }),
-
- 
 
 })
 

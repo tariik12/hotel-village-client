@@ -53,7 +53,7 @@ console.log(data)
            {/*CATEGORY*/}
           <input  className=" py-2 px-3 border-b-2 hover:border-orange-700 w-[240px] md:w-[500px] mx-auto" defaultValue='Spa' type="text" placeholder="" id="category"
             {...register('category')}  readOnly />
-          
+          d
           {/* PRICE */}
           <input
             className=" py-2 px-3 border-b-2 hover:border-orange-700 w-[240px] md:w-[500px] mx-auto"

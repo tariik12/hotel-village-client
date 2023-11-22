@@ -24,6 +24,17 @@ reset()
         <div className="flex flex-col gap-3">
       
          {/* NAME */}
+         {/* TNC Global LTD
+Universe Soft Care
+HeyDaw Technologies Private Limited
+AiOpsCamp-Finland
+Flex Softer
+Microters
+WorldTech 
+Hygwell
+INOQIA
+GoKundu
+Dinify-Canada */}
           <input className=" py-2 px-3 border-b-2 hover:border-orange-700 w-[240px] md:w-[500px] mx-auto"
             type="text"
             id="name"

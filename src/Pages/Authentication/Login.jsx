@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { googleLoginUser, signInUser } from '../../redux/user/userSlice';
 import toast, { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
-import login from '/login.mp4'
+import sing_up from '/sing_up.mp4'
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const {isLoading,email, isError, error} =useSelector((state)=>state.userSlice) 
@@ -41,7 +41,7 @@ const Login = () => {
           muted
           autoPlay
           loop
-          src={login}
+          src={sing_up}
         ></video>
       </div>
       <div className=" w-full grid place-items-center">

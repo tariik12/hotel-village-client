@@ -9,7 +9,7 @@ const options = [
 ];
 
 
-const image_hosting_Token = '3a33e8b148e73275cb371103f11b2579'
+const image_hosting_Token=import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 const AddFood = () => {
     const { register, handleSubmit, reset } = useForm();
     const [availableTime, setAvailableTime] = useState(null);

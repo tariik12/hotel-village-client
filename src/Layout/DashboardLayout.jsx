@@ -3,13 +3,13 @@ import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { SiNginxproxymanager } from "react-icons/si";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
-
+import { GiHamburgerMenu } from "react-icons/gi";
 
 
 const DashboardLayout = () => {
   const location = useLocation();
   const activeRoute = location.pathname;
-    const isAdmin = false;
+    const isAdmin = true;
     const isRouteActive = (route) => {
       return activeRoute === route ? 'active-link' : '';
     };
@@ -17,14 +17,14 @@ const DashboardLayout = () => {
         <div>
             <div className="drawer lg:drawer-open ">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content bg-gradient-to-t from-[#f1f1f3cf] via-[#228eac97] to-[#f7f4f4b8]">
+  <div className="drawer-content bg-gradient-to-t from-[#f1f1f3cf] via-[#228eac97] to-[#f7f4f4b8] ">
      
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+    <label htmlFor="my-drawer-2" className=" drawer-button lg:hidden"><GiHamburgerMenu  className="ms-6 text-2xl"/></label>
   <Outlet></Outlet>
   </div> 
-  <div className="drawer-side bg-gradient-to-r from-[#ec5c096a] via-[#4bbcdb8f] to-[#ec5c094c]">
+  <div className="drawer-side bg-gradient-to-r from-[#ec5c096a] via-[#4bbcdb8f] to-[#ec5c094c] ">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-    <ul className="menu p-4 w-80 h-full  text-white">
+    <ul className="menu p-4 w-80 h-full bg-slate-800 text-white">
       {
         isAdmin?<>
         <Link to='/dashboardLayout/addProducts' className={`nav-link flex items-center gap-3 justify-start md:text-xl font-bold uppercase text-white border-b-0 hover:border-b-4 border-orange-600 ${isRouteActive('/dashboardLayout/addProducts')}`}><AiOutlineAppstoreAdd/>Add Products</Link>

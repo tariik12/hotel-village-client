@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import toast,{Toaster} from 'react-hot-toast';
 import { createUser, googleLoginUser } from '../../redux/user/userSlice';
-
+import sing_up from '/sing_up.mp4'
 const Register = () => {
   const { handleSubmit, register, control } = useForm();
   const password = useWatch({ control, name: 'password' });
@@ -50,13 +50,19 @@ const {isLoading, isError, error,email} = useSelector((state) =>state.userSlice)
   };
 
   return (
-    <div className="md:flex max-w-7xl mx-auto h-screen items-center">
+    <div className="md:flex   h-screen items-center bg-gradient-to-t from-[#f1f1f3ef] via-[#228eac3d] to-[#f7f4f483]">
       <Toaster/>
-      <div className="md:w-1/2">
-        <img src='https://i.pinimg.com/originals/77/1b/8e/771b8ee247d670457faea7265818578f.png' className="h-full w-full" alt="" />
+      <div className="md:h-full  h-[300px]">
+      <video
+          className="relative h-full w-full object-fill"
+          muted
+          autoPlay
+          loop
+          src={sing_up}
+        ></video>
       </div>
-      <div className="md:w-1/2  grid place-items-center">
-        <div className="bg-primary/5 w-full max-w-sm rounded-lg grid place-items-center p-10">
+      <div className="w-full  grid place-items-center mx-auto">
+        <div className=" w-full max-w-sm rounded-lg grid place-items-center p-10">
           <h1 className="mb-10 font-medium text-2xl">Sign up</h1>
           <form className="space-y-5 w-full" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col items-start">
@@ -105,13 +111,7 @@ const {isLoading, isError, error,email} = useSelector((state) =>state.userSlice)
               />
             </div>
             <div className="!mt-8 ">
-              <button
-                type="submit"
-                className="btn btn-primary w-full disabled:bg-gray-300 disabled:cursor-not-allowed"
-                disabled={disabled}
-              >
-                Sign up
-              </button>
+              <button  disabled={disabled} type="submit" className=" w-full mt-4 bg-slate-50 px-3 py-2 border-2 border-orange-400 hover:text-white hover:bg-[#ff4500] hover:border-4 rounded-xl hover:border-[#ff4500] disabled:bg-gray-300 disabled:cursor-not-allowed" >Sign up</button>
             </div>
             <div>
               <p>
@@ -124,13 +124,7 @@ const {isLoading, isError, error,email} = useSelector((state) =>state.userSlice)
                 </span>
               </p>
             </div>
-            <button
-              type="button"
-              className="btn btn-primary w-full"
-              onClick={handleGoogleLogin}
-            >
-              Login with Google
-            </button>
+            <button type="button" className=" mt-4 w-full bg-slate-50 px-3 py-2 border-2 border-orange-400 hover:text-white hover:bg-[#ff4500] hover:border-4 rounded-xl hover:border-[#6a2d18] " onClick={handleGoogleLogin} >Login with Google</button>
           </form>
         </div>
       </div>

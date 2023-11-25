@@ -2,12 +2,12 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCLsTYQC15IbW_xaHnB9EdrgMT72L-jllk",
-    authDomain: "hotel-village.firebaseapp.com",
-    projectId: "hotel-village",
-    storageBucket: "hotel-village.appspot.com",
-    messagingSenderId: "606536897247",
-    appId: "1:606536897247:web:930ccd326859913bd44f6a"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
   };
 
 const app = initializeApp(firebaseConfig);

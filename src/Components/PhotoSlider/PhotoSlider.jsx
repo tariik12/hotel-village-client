@@ -66,14 +66,13 @@ const PhotoSlider = ({data, title}) => {
         }
       ]
       };
-
+const book= false;
     return (
         <div  className="mt-11 ">
              <Slider {...settings}>
              {
                showSlider?.map(({ image,_id, Category,description,rating }) =><div  className=" rounded-xl    w-full  p-2 " key={_id}>
                      <h2>{Category}</h2>
-                     
                     <img src={image} className="h-[300px] rounded-md w-full " alt="" />
                    
             {title && <div className="">
@@ -100,10 +99,11 @@ bed </p>
 
             </div>
             <p className="px-5 mt-5 md:w-3/4 mx-auto"  >{description} </p>
-            <div><button className='bg-slate-700 py-2 px-4 rounded-3xl text-white text-xs'> Book Now</button></div>
 <div className=" flex justify-center">
-
-                  <button className=" mt-4 bg-slate-50 px-3 py-2 border-2 border-orange-400 hover:text-white hover:bg-[#ff4500] hover:border-4 rounded-xl hover:border-[#ff4500] " >Check Ability</button>
+{
+  book? <> <button className=" mt-4 bg-slate-50 px-3 py-2 border-2 border-orange-400 hover:text-white hover:bg-[#ff4500] hover:border-4 rounded-xl hover:border-[#ff4500] " >Book Now</button></>:<> <button className=" mt-4 bg-slate-50 px-3 py-2 border-2 border-orange-400 hover:text-white hover:bg-[#ff4500] hover:border-4 rounded-xl hover:border-[#ff4500] " disabled >Already Book</button></>
+}
+                 
 </div>
               </div>}       
                 </div>)

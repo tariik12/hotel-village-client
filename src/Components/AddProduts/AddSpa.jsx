@@ -8,8 +8,7 @@ const options = [
   { value: 'Daily 6:30 am - 11:00 am', label: 'Daily 6:30 am - 11:00 am' },
 ];
 
-
-const image_hosting_Token = '3a33e8b148e73275cb371103f11b2579'
+const image_hosting_Token=import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 const AddSpa = () => {
     const { register, handleSubmit, reset } = useForm();
     const [availableTime, setAvailableTime] = useState(null);
@@ -53,7 +52,6 @@ console.log(data)
            {/*CATEGORY*/}
           <input  className=" py-2 px-3 border-b-2 hover:border-orange-700 w-[240px] md:w-[500px] mx-auto" defaultValue='Spa' type="text" placeholder="" id="category"
             {...register('category')}  readOnly />
-          d
           {/* PRICE */}
           <input
             className=" py-2 px-3 border-b-2 hover:border-orange-700 w-[240px] md:w-[500px] mx-auto"

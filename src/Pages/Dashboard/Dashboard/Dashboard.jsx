@@ -1,9 +1,15 @@
-import React from 'react';
+import dashboardDef from '/sing_up.mp4'
 
 const Dashboard = () => {
     return (
-        <div>
-            well come
+        <div className='h-full'>
+            <video
+          className="relative h-full w-full object-fill"
+          muted
+          autoPlay
+          loop
+          src={dashboardDef}
+        ></video>
         </div>
     );
 };

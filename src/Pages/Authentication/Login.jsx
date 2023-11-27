@@ -15,7 +15,6 @@ const Login = () => {
     dispatch(signInUser({email, password}))
   };
 
-
   const handleGoogleLogin = () => {
    dispatch(googleLoginUser())
   };

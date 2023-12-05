@@ -119,5 +119,6 @@ element:<BoughtProducts></BoughtProducts>
     {
       path:'/photoGraphy',
       element:<PhotoGraphy></PhotoGraphy>
-    }
+    },
+   
   ]);

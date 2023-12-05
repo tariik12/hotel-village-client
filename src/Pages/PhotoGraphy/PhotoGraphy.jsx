@@ -114,9 +114,6 @@ const PhotoGraphy = () => {
     return (
         <div className="">
             <Navbar></Navbar>
-            {/* <div className=" text-right me-6 text-xl text-orange-700">
-                Add Your Favorait pic
-            </div> */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 overflow-hidden mt-20">
 
             {

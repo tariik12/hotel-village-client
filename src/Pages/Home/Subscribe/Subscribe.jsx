@@ -18,7 +18,8 @@ const Subscribe = () => {
     </Link>
    </div>
    <div className=""  data-aos="fade-right">
-   <Link to='/photoGraphy' > <img className=" border-4 border-orange-700 rounded-lg" src="https://media.istockphoto.com/id/628389442/photo/dslr-camera.jpg?s=170667a&w=0&k=20&c=h95gGbHjG8gvb-6769jiBxOJwiOUgEZkSnly9rJr4PA=" alt="" /></Link>
+   <Link to='/photoGraphy' > <img className=" border-4 border-orange-700 rounded-lg" src="https://media.istockphoto.com/id/628389442/photo/dslr-camera.jpg?s=170667a&w=0&k=20&c=h95gGbHjG8gvb-6769jiBxOJwiOUgEZkSnly9rJr4PA=" alt="" />
+   </Link>
    </div>
 </div>
 </div>

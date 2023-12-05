@@ -114,7 +114,12 @@ const PhotoGraphy = () => {
     return (
         <div className="">
             <Navbar></Navbar>
+            <div className=" z-50 sticky top-20 flex justify-center gap-7 ">
+<h1 className="text-xl uppercase text-[#ff4500]">upload your favorite image </h1>
+              <input type="file" />
+              </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 overflow-hidden mt-20">
+          
 
             {
                 photography?.map(({image},reversedIndex) =><div key={image} data-aos={reversedIndex % 2 === 0 ? 'fade-left' : 'fade-right'} >

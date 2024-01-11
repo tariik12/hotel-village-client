@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
         <div  className="md:flex justify-evenly text-white pt-10  bg-gradient-to-t from-[#f1f1f3cf] via-[#228eac97] to-[#f7f4f4b8]">
           <div>
             <h1 className="font-bold">QUICK LINKS</h1>
-<p>Best Online Rate Guarantee</p>
+<Link to='/bestOnline-rate'>Best Online Rate Guarantee</Link>
 <p>Blog</p>
 <p>Destinations</p>
 <p>New and upcoming hotels</p>

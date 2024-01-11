@@ -26,6 +26,7 @@ import Register from "../Pages/Authentication/Register";
 import ManageProduct from "../Pages/Dashboard/Admin/ManageProduct";
 import PhotoGraphy from "../Pages/PhotoGraphy/PhotoGraphy";
 import UserFeedback from "../Pages/Dashboard/User/UserFeedback";
+import BestOnlineRate from "../Pages/FooterRouting/BestOnlineRate/BestOnlineRate";
 
 export const router = createBrowserRouter([
     {
@@ -119,6 +120,10 @@ element:<BoughtProducts></BoughtProducts>
     {
       path:'/photoGraphy',
       element:<PhotoGraphy></PhotoGraphy>
+    },
+    {
+      path:'/bestOnline-rate',
+      element:<BestOnlineRate></BestOnlineRate>
     },
    
   ]);

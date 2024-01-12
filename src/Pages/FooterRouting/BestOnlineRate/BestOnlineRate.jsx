@@ -30,12 +30,12 @@ const BestOnlineRate =()=>{
     <div>            
         <h2 className="text-2xl font-thin">Build a Strong Online Presence:</h2>
         <ul>
-            <li> 🟠 Maintain an updated and user-friendly website with easy navigation.</li>
+            <li> 🟠 Maintain an updated and user-friendly website with easy navigation .</li>
             <li> 🟠 Leverage social media platforms to engage with your audience and showcase your hotel's personality.</li>
         </ul>
         </div>
     <div className="mt-5">            
-        <h2 className="text-2xl font-thin">Responsive Customer Service:</h2>
+        <h2 className="text-2xl  font-thin">Responsive Customer Service:</h2>
         <ul>
             <li> 🟠Provide excellent customer service and ensure prompt responses to inquiries.</li>
             <li> 🟠 Happy guests are more likely to become repeat customers and advocates for your hotel.</li>
